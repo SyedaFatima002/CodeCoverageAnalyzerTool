@@ -1,2 +1,2 @@
-sum: a, b
-multiply: a, b, c
+sum: a: number, b: number
+multiply: a: number, b: number, c: number
