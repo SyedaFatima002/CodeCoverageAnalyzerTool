@@ -39,6 +39,27 @@ const outputContent = functionInfo
   .join("\n");
 fs.writeFileSync(outputFilename, outputContent);
 
+//This function will replace the colons after the function name with = symbol
+//This is required so that testCaseGeneration-typescript.js file runs correctly
+function replaceColonWithEqual(fileName) {
+  const data = fs.readFileSync(fileName, "utf8");
+  const lines = data.split("\n");
+  const newLines = lines.map((line) => {
+    const firstColonIndex = line.indexOf(":");
+    if (firstColonIndex !== -1) {
+      const firstPart = line.slice(0, firstColonIndex);
+      const secondPart = line.slice(firstColonIndex + 1);
+      return `${firstPart}=${secondPart}`;
+    }
+    return line;
+  });
+  const newData = newLines.join("\n");
+  fs.writeFileSync(fileName, newData, "utf8");
+}
+
+//Calling the function
+replaceColonWithEqual(outputFilename);
+
 //Following code will get the return type of function as well
 
 // const fs = require("fs");
