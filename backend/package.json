@@ -4,7 +4,7 @@
   "description": "Backend for the Code Coverage Analyser and Test Case Generator Tool",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
