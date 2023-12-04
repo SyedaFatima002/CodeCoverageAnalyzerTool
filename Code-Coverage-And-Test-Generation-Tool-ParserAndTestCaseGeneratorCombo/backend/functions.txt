@@ -1,2 +1,0 @@
-sum: number= a: number, b: number, conditions: if: a > 0
-multiply: number= a: number, b: number, c: number, conditions: if: a==0 && b>1, if: a>0
