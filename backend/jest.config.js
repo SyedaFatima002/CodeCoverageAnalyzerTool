@@ -1,17 +1,29 @@
+let filename = "";
+let fullFilePath = "";
+function getVariables(a) {
+  filename = a;
+  fullFilePath = `./uploads/${filename}`;
+  console.log(`Full File Path is: ${fullFilePath}`);
+}
+
 module.exports = {
-    transform: {
-      '^.+\\.tsx?$': 'ts-jest',
-    },
-    preset: 'ts-jest',
-    testEnvironment: 'node',
-    reporters: [
-      'default',
-      ['jest-html-reporters', {
-        publicPath: './coverage',
-        filename: 'test-report.html',
+  getVariables,
+  transform: {
+    "^.+\\.tsx?$": "ts-jest",
+  },
+  preset: "ts-jest",
+  testEnvironment: "node",
+  reporters: [
+    "default",
+    [
+      "jest-html-reporters",
+      {
+        publicPath: "./coverage",
+        filename: "test-report.html",
         expand: true,
-      }],
+      },
     ],
-    collectCoverageFrom: ["myFile.ts"],
-    coverageDirectory: "coverage",
-  };
+  ],
+  collectCoverageFrom: [`./uploads/newFile.ts`],
+  coverageDirectory: "coverage",
+};

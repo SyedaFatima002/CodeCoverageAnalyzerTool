@@ -5,6 +5,7 @@ const path = require("path");
 const parseFile = require("./parsing.js");
 const testGeneration = require("./testGeneration.js");
 const { exec } = require("child_process");
+const { getVariables } = require("./jest.config.js");
 
 const app = express();
 
@@ -33,6 +34,7 @@ app.post("/upload/file", upload.single("file"), (req, res) => {
   if (req.file) {
     parseFile(req.file.filename);
     testGeneration(req.file.filename);
+    getVariables(req.file.filename);
     console.log(req.file.filename);
     res.status(200).json({
       success: true,
@@ -64,14 +66,10 @@ app.get("/run-test", (req, res) => {
   });
 });
 
-// Endpoint for opening the report (not tested yet)
+// Endpoint for opening the report
 app.get("/report", (req, res) => {
   res.redirect("/test-report.html");
 });
-
-// app.get("/report", (req, res) => {
-//   res.sendFile(path.join(__dirname, "/coverage/test-report.html"));
-// });
 
 app.listen(PORT, () => {
   console.log(`Server is running on Port ${PORT}`);
