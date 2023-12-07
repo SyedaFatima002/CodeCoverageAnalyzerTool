@@ -11,6 +11,7 @@ const App = () => {
         <Route path="/upload-file" element={<UploadFile />} />
         <Route path="/generate-tests" element={<GenerateTestCasesCard />} />
         <Route path="/view-report" element={<ViewReportCard />} />
+        
       </Routes>
     </BrowserRouter>
   );

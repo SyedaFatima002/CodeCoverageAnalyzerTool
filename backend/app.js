@@ -5,7 +5,7 @@ const path = require("path");
 const parseFile = require("./parsing.js");
 const testGeneration = require("./testGeneration.js");
 const { exec } = require("child_process");
-const { getVariables } = require("./jest.config.js");
+const { generatePDF } = require("./generate-pdf");
 
 const app = express();
 
@@ -64,6 +64,16 @@ app.get("/run-test", (req, res) => {
     success: true,
     message: "Test started",
   });
+});
+
+app.post("/exportpdf", async (req, res) => {
+  try {
+    await generatePDF();
+    res.status(200).json({ success: true, message: "PDF exported successfully." });
+  } catch (error) {
+    console.error("Error exporting PDF:", error);
+    res.status(500).json({ success: false, message: "Error exporting PDF." });
+  }
 });
 
 // Endpoint for opening the report

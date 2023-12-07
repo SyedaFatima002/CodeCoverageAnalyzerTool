@@ -1,15 +1,25 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
+import 'bootstrap/dist/css/bootstrap.css';
+import FileUpload from "./UploadFile";
+import "../App.css";
+import heroImage from '../Images/bg.png';
+import GenerateTestCases from "./GenerateTestCasesCard"
 const Home = () => {
   return (
     <div>
-      <h1>Home Page</h1>
-      <Link to="/upload-file">Upload File</Link> <br />
-      <Link to="/generate-tests">Generate Tests</Link>
-      <br />
-      <Link to="/view-report">View Report</Link>
-      <br />
+      
+      <div className="hero-section">
+        <img src={heroImage}  alt="Hero" className="img-fluid" />
+        <div className="hero-content">
+          <h1>Code Coverage Analyzer and Test Generator Tool</h1>
+          <p>Upload the file and view the coverage report</p>
+        </div>
+      </div>
+
+      <div className="components-wrapper">
+        <FileUpload />
+        <GenerateTestCases />
+      </div>
     </div>
   );
 };

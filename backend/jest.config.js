@@ -1,18 +1,10 @@
-let filename = "";
-let fullFilePath = "";
-function getVariables(a) {
-  filename = a;
-  fullFilePath = `./uploads/${filename}`;
-  console.log(`Full File Path is: ${fullFilePath}`);
-}
-
 module.exports = {
-  getVariables,
   transform: {
     "^.+\\.tsx?$": "ts-jest",
   },
   preset: "ts-jest",
   testEnvironment: "node",
+  testResultsProcessor: "./generate-pdf.js",
   reporters: [
     "default",
     [

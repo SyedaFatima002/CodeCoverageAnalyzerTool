@@ -1,4 +1,6 @@
+import 'bootstrap/dist/css/bootstrap.css';
 import React, { useState } from "react";
+import "../App.css"
 import axios from "axios";
 
 function FileUpload() {
@@ -23,22 +25,22 @@ function FileUpload() {
   };
 
   return (
-    <div
-      style={{
-        width: "200px",
-        padding: "20px",
-        border: "1px solid #ccc",
-        borderRadius: "5px",
-        margin: "auto",
-        marginTop: "50px",
-      }}
-    >
-      <h1>Upload File</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="file" onChange={handleFileChange} />
-        <button type="submit">Upload</button>
+   
+    
+    <div className='custom-card'>
+      <h3>Upload File</h3>
+      <form onSubmit={handleSubmit} className="d-flex align-items-center">
+        <input
+          type="file"
+          className="form-control"
+          name="file"
+          onChange={handleFileChange}
+        />
+        <button type="submit" className='btn-primary'>Upload</button>
       </form>
     </div>
+    
+ 
   );
 }
 
