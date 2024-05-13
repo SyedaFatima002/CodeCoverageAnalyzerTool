@@ -2,41 +2,41 @@
  const { sum, multiply, subtract } = require('./uploads/newFile.ts');
  
         test('sum test 1', () => {
-            const result = sum(6127463214088192, 2590430562615296);
-            expect(result).toBe(2775312171532288);
+            const result = sum(3375650748497920, 472509738647552);
+            expect(result).toBe(2305479965409280);
         });
 
         test('sum test 2', () => {
-            const result = sum(2984836463591424, 5237991339458560);
-            expect(result).toBe(7282759141687296);
+            const result = sum(1186745836109824, 4249794023260160);
+            expect(result).toBe(4425207678763008);
         });
 
         test('sum test 3', () => {
-            const result = sum(4162218316791808, 5971146272931840);
-            expect(result).toBe(7631366120275968);
+            const result = sum(4813939649019904, 4380877905723392);
+            expect(result).toBe(3340207965339648);
         });
 
         test('sum test 4', () => {
-            const result = sum(7863599638773760, 2200546054242304);
-            expect(result).toBe(3380772169842688);
+            const result = sum(6172110193950720, 6556223094652928);
+            expect(result).toBe(8173858068627456);
         });
 
         test('multiply test 1', () => {
-            const result = multiply(4035054269366272, 1222228557430784, 5771533848936448);
-            expect(result).toBe(7821090405482496);
+            const result = multiply(7265150929207296, 8181826830991360, 4416642064842752);
+            expect(result).toBe(5581750688284672);
         });
 
         test('multiply test 2', () => {
-            const result = multiply(7917791738855424, 7290037196554240, 1876127953977344);
-            expect(result).toBe(2720292352819200);
+            const result = multiply(4561647790194688, 2931350990487552, 939316381483008);
+            expect(result).toBe(2546844001370112);
         });
 
         test('subtract test 1', () => {
-            const result = subtract(7505661912940544, 2000344114528256);
-            expect(result).toBe(4462362195132416);
+            const result = subtract(5635429692866560, 7197241875890176);
+            expect(result).toBe(3473155653894144);
         });
 
         test('subtract test 2', () => {
-            const result = subtract(4147008684163072, 2814937558679552);
-            expect(result).toBe(2345066116939776);
+            const result = subtract(400572301705216, 4616288118767616);
+            expect(result).toBe(5387615224201216);
         });
